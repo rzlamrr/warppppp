@@ -8,5 +8,6 @@ steps:
     ID:
       from_secret: ID
   commands:
-  - pip3 install wheel setuptools requests
+  - export TERM=xterm
+  - pip3 install -q wheel setuptools requests
   - python3 wp.py
