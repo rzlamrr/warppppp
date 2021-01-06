@@ -1,0 +1,12 @@
+kind: pipeline
+name: warppppp
+
+steps:
+- name: gaskeun
+  image: python:3.8
+  environment:
+    ID:
+      from_secret: ID
+  commands:
+  - pip3 install wheel setuptools requests
+  - python3 wp.py
