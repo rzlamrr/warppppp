@@ -1,0 +1,22 @@
+name: gaskan
+
+on:
+#  release:
+#    types: [published]
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: alpine-latest
+
+    steps:
+       - name: Checkout
+         uses: actions/checkout@main
+
+       - name: Download Script
+         run: |
+           apk add --no-cache python3 wget curl
+           pip3 install wheel setuptools requests
+       - name: Running Script
+         run: bash start
